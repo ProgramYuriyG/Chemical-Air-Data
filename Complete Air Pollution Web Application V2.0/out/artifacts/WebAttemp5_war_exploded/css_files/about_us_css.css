@@ -1,0 +1,252 @@
+/* ----- Overall Section ----- */
+
+
+/* REHAUL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: #000000;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    /*background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(images/scenic_mountains.jpg);
+    */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.animate-left {
+    position: relative;
+    animation: animateleft 2.5s
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.animate-right {
+    position: relative;
+    animation: animateright 2.5s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+
+/* ----- End of Overall ----- */
+
+
+/* ----- Header Section ----- */
+
+.logo {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    max-height: 75px;
+    width: auto;
+}
+
+.header-nav {
+    margin-top: 40px;
+    float: right;
+    list-style: none;
+}
+
+.header-nav li {
+    padding-right: 50px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-nav li a:link,
+.header-nav li a:visited {
+    padding: 8px 0;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid #507192;
+    transition: border-bottom 0.3s, font-size 0.3s;
+}
+
+.header-nav li a:hover,
+.header-nav li a:active {
+    font-size: 100%;
+}
+
+
+/* ----- End of Header ----- */
+
+
+/* ----- Content Section ----- */
+
+h2 {
+    font-size: 200%;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+section p {
+    line-height: 146%;
+}
+
+section ul {
+    margin-left: 6%;
+}
+
+li {
+    padding: 10px;
+    line-height: 120%;
+}
+
+.span-2-of-3 {
+    width: 60%;
+}
+
+.span-1-of-3 {
+    width: 40%;
+}
+
+img {
+    margin-left: 1%;
+    text-align: center;
+    width: 99%;
+    height: 95%;
+    border-radius: 12%;
+    background-size: cover;
+    background-position: center;
+}
+
+h2,
+p {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+
+/* ----- End of Content ----- */
+
+
+/* ----- Our Vision Section ----- */
+
+.our-vision {
+    margin-top: 5%;
+}
+
+.our-vision .copy {
+    margin-left: 0;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.our-vision h2:after {
+    display: block;
+    height: 3px;
+    background-color: black;
+    content: " ";
+    width: 25%;
+    margin: 5% auto 0px auto;
+}
+
+.our-vision p {
+    line-height: 150%;
+    font-size: 110%
+}
+
+
+/* ----- End of Our Vision ----- */
+
+
+/* ----- Reliable Data Section ----- */
+
+.reliable-data h2:after {
+    display: block;
+    height: 3px;
+    background-color: black;
+    content: " ";
+    width: 25%;
+    margin: 5% auto 0px auto;
+}
+
+.reliable-data .copy {
+    margin-left: 0;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.reliable-data .alter-img {
+    margin-left: 0;
+    float: right;
+}
+
+.reliable-data p {
+    line-height: 150%;
+    font-size: 110%
+}
+
+.reliable-data h2 {
+    line-height: 130%;
+}
+
+
+/* ----- End of Reliable Data ----- */
+
+
+/* ----- Act Now Section ----- */
+
+.act-now h2:after {
+    display: block;
+    height: 3px;
+    background-color: black;
+    content: " ";
+    width: 25%;
+    margin: 5% auto 0px auto;
+}
+
+.act-now p {
+    line-height: 150%;
+    font-size: 110%
+}
+
+.act-now .copy {
+    margin-left: 0;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.act-now .trash {
+    margin-top: 4%;
+}
+
+
+/* ----- End of Act Now ----- */

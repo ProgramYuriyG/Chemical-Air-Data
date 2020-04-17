@@ -1,0 +1,112 @@
+/* 
+Colors:
+Wet Asphalt: #34495e
+Midnight Blue: #2c3e50
+*/
+
+
+/* ----- Overall Section ----- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ----- End of Overall ----- */
+
+
+/* ----- Header Section ----- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../html_images/beautiful_sky_pollution.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    margin: 0px, 0px, 20px, 0px;
+    color: #ffffff;
+    font-size: 200%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.pollution-text-box {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.full-button:link,
+.full-button:visited {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    border: #34495e solid 2px;
+    border-radius: 200px;
+    background-color: #2c3e50;
+    transition: background-color 0.5s;
+}
+
+.full-button:hover,
+.full-button:active {
+    background-color: #1a252f;
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    max-height: 75px;
+    width: auto;
+}
+
+.header-nav {
+    margin-top: 40px;
+    float: right;
+    list-style: none;
+}
+
+.header-nav li {
+    padding-right: 50px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-nav li a:link,
+.header-nav li a:visited {
+    padding: 8px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s, font-size 0.3s;
+}
+
+.header-nav li a:hover,
+.header-nav li a:active {
+    font-size: 100%;
+    border-bottom: 2px solid #507192;
+}
+
+
+/* ----- End of Header ----- */

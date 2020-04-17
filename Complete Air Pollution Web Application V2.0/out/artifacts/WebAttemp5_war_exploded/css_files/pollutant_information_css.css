@@ -1,0 +1,214 @@
+    /* ----- Overall Section ----- */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        background-color: #ffffff;
+        color: #000000;
+        font-family: 'Libre Baskerville', 'Arial', serif;
+        font-weight: 300;
+        font-size: 20px;
+        text-rendering: optimizeLegibility;
+    }
+    
+    body {
+        background-image: url(../html_images/high_sky_pollution.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    /* ----- End of Overall ----- */
+    /* ----- Header Section ----- */
+    
+    header {
+        margin-bottom: 3%;
+    }
+    
+    .logo {
+        margin-top: 20px;
+        margin-left: 10px;
+        float: left;
+        max-height: 75px;
+        width: auto;
+        height: auto;
+    }
+    
+    .header-nav {
+        margin-top: 40px;
+        float: right;
+        list-style: none;
+    }
+    
+    .header-nav li {
+        font-family: 'Lato', sans-serif;
+        padding-right: 50px;
+        display: inline-block;
+        margin-left: 20px;
+    }
+    
+    .header-nav li a:link,
+    .header-nav li a:visited {
+        padding: 8px 0;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 90%;
+        border-bottom: 2px solid #eeeeee;
+        transition: border-bottom 0.3s, font-size 0.3s;
+    }
+    
+    .header-nav li a:hover,
+    .header-nav li a:active {
+        font-size: 100%;
+        border-bottom: 2px solid #ffffff;
+    }
+    /* ----- End of Header ----- */
+    /* ----- Links Section ----- */
+    
+    .pollutant-links a {
+        font-size: 90%;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .pollutant-links a:link,
+    .pollutant-links a:visited {
+        transition: background 0.3s;
+    }
+    
+    .pollutant-links a:hover,
+    .pollutant-links a:active {
+        background: #2C4537;
+    }
+    
+    .circle {
+        border-radius: 1000%;
+        width: 50px;
+        height: 50px;
+        background: #0C2032;
+        display: inline-block;
+        line-height: 50px;
+        vertical-align: center;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    .left-links a {
+        margin-top: -2%;
+        margin-bottom: 0;
+        margin-left: 12%;
+        float: left;
+    }
+    
+    .right-links a {
+        margin-top: -2%;
+        margin-bottom: 0;
+        margin-right: 12%;
+        float: right;
+    }
+    /* ----- End of Links ----- */
+    /* ----- Paragraph Section ----- */
+    /* Header */
+    /*.header-title {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.8));
+    }*/
+    
+    h1 {
+        margin: 0 0 15px 0;
+        text-align: center;
+        color: #000000;
+        font-size: 250%;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 4px;
+        text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+    }
+    
+    h2 {
+        font-size: 120%;
+        /*noinspection CssInvalidPropertyValue*/
+        font-weight: 110%;
+        /*noinspection CssInvalidPropertyValue*/
+        margin: 0, 0, 20, 0;
+        text-align: center;
+        color: #000000;
+        text-shadow: 0 0 3px rgb(199, 199, 199), 0 0 6px rgb(255, 255, 255);
+    }
+    
+    h2:after {
+        display: block;
+        height: 3px;
+        background-color: black;
+        content: " ";
+        width: 25%;
+        margin: 30px auto 0px auto;
+    }
+    /* ----- Content Section -----*/
+    
+    .total_pollutant {
+        margin-bottom: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+        padding: 10px 0px 30px 0px;
+        border: 2px solid #56799d;
+        border-radius: 12%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    }
+    
+    .pollutant_title {
+        margin: 10px 0px 20px 30px;
+        text-align: center;
+        font-size: 170%;
+        font-weight: bold;
+    }
+    
+    .pollutant_content_title {
+        font-size: 130%;
+        margin: 0px 0px 10px 30px;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    
+    .pollutant_content_title li {
+        text-align: center;
+    }
+    
+    .pollutant_content_title li:after {
+        display: block;
+        height: 2px;
+        background-color: black;
+        content: " ";
+        width: 65%;
+        margin: 5px auto;
+    }
+    
+    .pollutant_content {
+        margin: 0px 0px 10px 30px;
+        line-height: 146%;
+        width: 100%;
+    }
+    
+    .pollutant_content li {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 15px;
+        text-align: center;
+    }
+    
+    .pollutant_content ul li {
+        padding-bottom: 10px;
+    }
+    
+    .left-bullets {
+        text-align: left !important;
+        margin-left: 10%;
+        list-style-type: "-";
+    }
+    /* ----- End of Content ----- */

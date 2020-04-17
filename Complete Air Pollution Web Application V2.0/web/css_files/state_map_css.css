@@ -1,0 +1,213 @@
+/* ----- Overall Section ----- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #F0F0F0;
+    color: #000000;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+}
+
+
+/* ----- End of Overall ----- */
+
+
+/* ----- Header Section ----- */
+
+h1 {
+    margin: 0, 0, 20, 0;
+    text-align: center;
+    color: #000000;
+    font-size: 200%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    max-height: 75px;
+    width: auto;
+}
+
+.header-nav {
+    margin-top: 40px;
+    float: right;
+    list-style: none;
+}
+
+.header-nav li {
+    padding-right: 50px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-nav li a:link,
+.header-nav li a:visited {
+    padding: 8px 0;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid #507192;
+    transition: border-bottom 0.3s, font-size 0.3s;
+}
+
+.header-nav li a:hover,
+.header-nav li a:active {
+    font-size: 100%;
+}
+
+/* ----- End of Header ----- */
+
+
+/* ----- Map Section ----- */
+
+
+/* ----- https://www.createaclickablemap.com/ ----- */
+
+.state_iframe {
+    float: left;
+    width: 80%;
+    height: 85%;
+    border: none;
+}
+
+.state_display,
+.state_display_altered {
+    width: 15%;
+    height: auto;
+    float: left;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.state_display_altered {
+    font-size: 130%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+input,
+select{
+    margin-top: 3%;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+select{
+    margin-top: 4%;
+}
+
+.first-label{
+    margin-bottom: 1%;
+}
+
+#submit-state{
+    padding: 5px;
+    width: 75%;
+    height: auto;
+}
+
+strong{
+    font-weight: bold;
+}
+.state_display_altered:after {
+    display: block;
+    height: 3px;
+    background-color: black;
+    content: " ";
+    width: 75%;
+    margin: 10% auto 0px auto;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.animate-right {
+    position: relative;
+    animation: animateright 1.5s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+#state-form{
+    visibility: hidden;
+}
+
+
+/* ----- End of Map ----- */
+
+#states a path {
+    transition: fill .5s ease;
+    -moz-transition: fill .5s ease;
+    -webkit-transition: fill .5s ease;
+    fill: #234262;
+}
+
+#states a:hover path {
+    transition: fill .5s ease;
+    -moz-transition: fill .5s ease;
+    -webkit-transition: fill .5s ease;
+    fill: #1C2732 !important;
+}
+
+#states a:hover path {
+    cursor: pointer;
+    fill: #1C2732;
+}
+
+#states a text {
+    cursor: pointer;
+    fill: #ffffff;
+    display: initial;
+}
+
+#states a:hover text {
+    fill: #EAEAEA;
+    color: #EAEAEA;
+}
+
+#states a.inverse text:hover {
+    fill: #EAEAEA;
+}
+
+#states a.inverse text {
+    fill: #000000;
+}
+
+.CCMcredit a {
+    color: #234262;
+}
+
+#states a text {
+    font-size: 12px;
+}
