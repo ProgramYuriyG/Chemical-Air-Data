@@ -1,7 +1,9 @@
 # Chemical-Air-Data
 Designed a web application from the ground up to display information on air pollution and statistics on a state map that users can interact with.
 
-# #How To:
+Uses: Java/SQL/Selenium/HTML/CSS
+
+## How To:
 - To Run the Web Applications set up your Tomcat server to run the exploded war
 - Go to the address of the exploded war in your browser and you are at the site now
 
