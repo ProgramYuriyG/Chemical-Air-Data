@@ -1,7 +1,9 @@
 # Chemical-Air-Data
-A website for viewing the air pollution data for various states in the United States of America from today all the way back to 1985.
+A website designed for viewing the air pollution data for various states in the United States of America from 2020 all the way back to 1985. An easy to use interface with valuable information at your fingertips!
+
 Contains Data on:
 ##### Carbon Monoxide, Lead, Nitrogen dioxide, Ozone, Particulate matter <= 10μm in diameter, Particulate matter <= 2.5μm in diameter, Sulfur dioxide
+
 Uses: Java/SQL/Selenium/HTML/CSS
 
 ## Who is this data useful for?
