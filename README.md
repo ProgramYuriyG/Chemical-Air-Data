@@ -4,6 +4,8 @@ A website designed for viewing the air pollution data for various states in the 
 Contains Data on:
 ##### Carbon Monoxide, Lead, Nitrogen dioxide, Ozone, Particulate matter <= 10μm in diameter, Particulate matter <= 2.5μm in diameter, Sulfur dioxide
 
+Air Pollution Data is Collected from epa.gov website which has many air pollution monitors that data is pulled from.
+
 Uses: Java/SQL/Selenium/HTML/CSS
 
 ## Who is this data useful for?
