@@ -18,5 +18,15 @@
         <url-pattern>/stateMap</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>HeatMapServlet</servlet-name>
+        <servlet-class>webapplication.HeatMapServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HeatMapServlet</servlet-name>
+        <url-pattern>/heatMap</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

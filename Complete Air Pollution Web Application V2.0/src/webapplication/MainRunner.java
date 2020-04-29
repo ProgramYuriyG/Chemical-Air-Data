@@ -9,7 +9,7 @@ public class MainRunner {
         //webapplication.DataCollector collector = new webapplication.DataCollector();
         //collector.collectPollutionData();
 
-        //webapplication.DatabaseManager manager = new webapplication.DatabaseManager();
-        //manager.getDatabaseConnection(true, true);
+        webapplication.DatabaseManager manager = new webapplication.DatabaseManager();
+        manager.getDatabaseConnection(true, true);
     }
 }

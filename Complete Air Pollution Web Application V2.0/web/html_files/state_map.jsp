@@ -19,7 +19,8 @@
                     <li><a href="homepage.html">Homepage</a></li>
                     <li><a href="pollutant_information.html">Pollutant Info</a></li>
                     <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="${pageContext.request.contextPath}/stateMap">State Map</a></li>
+                    <li><a href="state_map.jsp">State Map</a></li>
+                    <li><a href="state_heatmap.jsp">Heat Map</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,6 +44,9 @@
             <p class="state_display">Select The State You Want To See Information For</p>
         <% } else {%>
             <p class="animate-right state_display_altered">${sessionScope.stateName}</p>
+            <script>
+                $("#${sessionScope.stateId}").find( "path" ).attr("style", "fill:#3e74ad !important");
+            </script>
         <% } %>
 
         <% if ((session.getAttribute("stateAverage")== null) && ((session.getAttribute("stateName") != null))) { %>
@@ -97,11 +101,11 @@
                 <% } %>
             </p>
         <% } %>
-
-    </form>
+    </div>
 
     <form id="state-form" method="Post" action="${pageContext.request.contextPath}/stateMap">
         <input id="state-value" type="text" name="state-value" />
+        <input id="state-id" type="text" name="state-id" />
     </form>
 
     <script>
@@ -344,7 +348,9 @@
         $(document).ready(function() {
             $('.hint').on('click', function() {
                 var value = $(this).attr('title');
+                var id = $(this).attr('id');
                 $('#state-value').attr("value", value);
+                $('#state-id').attr("value", id);
                 $(".state_display_altered").html(function(n) {
                     return value;
                 });

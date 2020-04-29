@@ -177,7 +177,7 @@ label {
     transition: fill .5s ease;
     -moz-transition: fill .5s ease;
     -webkit-transition: fill .5s ease;
-    fill: #1C2732 !important;
+    fill: #1C2732;
 }
 
 #states a:hover path {

@@ -4,13 +4,13 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 /*
  * This class uses jdbc to connect to Microsoft SQL Server Database
@@ -429,8 +429,8 @@ public class DatabaseManager {
         }
     }
 
-    //method used to query information
-    public ArrayList queryDatabase(String pollutant, String searchState, String dateStart, String dateEnd) throws ClassNotFoundException {
+    //method used to query information for the average, min and max
+    public ArrayList queryDatabaseForAverage(String pollutant, String searchState, String dateStart, String dateEnd) throws ClassNotFoundException {
         // Create a variable for the connection string.
         String connectionUrl ="jdbc:sqlserver://LAPTOP-SEB0OMKO;integratedSecurity=true;";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -520,6 +520,112 @@ public class DatabaseManager {
             }
             rs.close();
             return list;
+        }
+        // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    //method used to query information for the heatmap
+    public Dictionary queryDatabaseForHeatmap(String pollutant, ArrayList<String> nameList, String dateStart, String dateEnd) throws ClassNotFoundException {
+        // Create a variable for the connection string.
+        String connectionUrl ="jdbc:sqlserver://LAPTOP-SEB0OMKO;integratedSecurity=true;";
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
+            /*
+            <option value="carbonMonoxide">Carbon Monoxide</option>
+                <option value="lead">Lead</option>
+                <option value="nitrogenDioxide">Nitrogen Dioxide</option>
+                <option value="ozone">Ozone</option>
+                <option value="sulfurDioxide">Sulfur Dioxide</option>
+                <option value="pm10">PM10</option>
+                <option value="pm2_5">PM2.5</option>
+             */
+
+            Dictionary totalStateInformation = new Hashtable();
+
+            for(int stateId=0; stateId<nameList.size(); stateId++){
+                String sqlQuery = "USE AirPollutionUnitedStates\n" + "\n";
+                String pollutantSearchValue = "";
+                String pollutantUnits = "";
+                switch(pollutant){
+                    case "carbonMonoxide":
+                        pollutantUnits = "ppm";
+                        pollutantSearchValue = "Daily Max 8 hour CO Concentration";
+                        sqlQuery += "SELECT P.Daily_Max_8_hour_CO_Concentration\n" +
+                                "FROM PollutantCarbonMonoxide P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.carbonMonoxide_site_id = M.Site_ID\n";
+                        break;
+                    case "lead":
+                        pollutantUnits = "ug/m3 SC";
+                        pollutantSearchValue = "Daily Mean Pb Concentration";
+                        sqlQuery += "SELECT P.Daily_Mean_Pb_Concentration\n" +
+                                "FROM PollutantLead P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.lead_site_id = M.Site_ID\n";
+                        break;
+                    case "nitrogenDioxide":
+                        pollutantUnits = "ppb";
+                        pollutantSearchValue = "Daily Max 1 hour NO2 Concentration";
+                        sqlQuery += "SELECT P.Daily_Max_1_hour_NO2_Concentration\n" +
+                                "FROM PollutantNitrogenDioxide P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.nitrogenDioxide_site_id = M.Site_ID\n";
+                        break;
+                    case "ozone":
+                        pollutantUnits = "ppm";
+                        pollutantSearchValue = "Daily Max 8 hour Ozone Concentration";
+                        sqlQuery += "SELECT P.Daily_Max_8_hour_Ozone_Concentration\n" +
+                                "FROM PollutantOzone P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.ozone_site_id = M.Site_ID\n";
+                        break;
+                    case "sulfurDioxide":
+                        pollutantUnits = "ppb";
+                        pollutantSearchValue = "Daily Max 1 hour SO2 Concentration";
+                        sqlQuery += "SELECT P.Daily_Max_1_hour_SO2_Concentration\n" +
+                                "FROM PollutantSulfurDioxide P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.sulfurDioxide_site_id = M.Site_ID\n";
+                        break;
+                    case "pm10":
+                        pollutantUnits = "ug/m3 SC";
+                        pollutantSearchValue = "Daily Mean PM10 Concentration";
+                        sqlQuery += "SELECT P.Daily_Mean_PM10_Concentration\n" +
+                                "FROM PollutantPM10 P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.pm10_site_id = M.Site_ID\n";
+                        break;
+                    case "pm2_5":
+                        pollutantUnits = "ug/m3 LC";
+                        pollutantSearchValue = "Daily Mean PM 2.5 Concentration";
+                        sqlQuery += "SELECT P.Daily_Mean_PM2_5_Concentration\n" +
+                                "FROM PollutantPM2_5 P\n" +
+                                "LEFT JOIN MonitorSites M\n" +
+                                "ON P.pm2_5_site_id = M.Site_ID\n";
+                        break;
+
+                }
+                //Insert into the Master Table
+                sqlQuery +=
+                        "WHERE M.STATE='"+ nameList.get(stateId) +"' AND P.Date between '"+dateStart+"' and '"+dateEnd+"'\n";
+                PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
+                ResultSet rs = preparedStatement.executeQuery();
+
+                ArrayList list = new ArrayList();
+                list.add(pollutantSearchValue);
+                list.add(pollutantUnits);
+                while(rs.next()){
+                    list.add(rs.getString(1));
+                }
+                rs.close();
+                totalStateInformation.put(nameList.get(stateId) , list);
+            }
+            return totalStateInformation;
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
