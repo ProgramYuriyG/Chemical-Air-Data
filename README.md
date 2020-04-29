@@ -6,7 +6,19 @@ Contains Data on:
 
 Air Pollution Data is Collected from epa.gov website which has many air pollution monitors that data is pulled from.
 
-Uses: Java/SQL/Selenium/HTML/CSS
+### Uses:
+Tomcat – for the local server
+
+HTML/CSS – for the web pages
+
+Java/Jquery/Javascript - for jsp pages
+
+Java/Apache Commons/JDBC – for database interaction
+
+Java/Selenium – for data collection
+
+Maven – for dependencies
+
 
 ## Who is this data useful for?
 - This application would be useful for those who want more information on air pollution statistics in certain states, either for research purposes or to be more well informed on how certain states are doing in regards to pollution.
@@ -25,9 +37,29 @@ Uses: Java/SQL/Selenium/HTML/CSS
 - In the selector choose your desired time frame and pollutant and the information will be displayed
 
 ## Results:
+
+### Homepage
+
 ![](/Air%20Data%20Screenshots/homepage.PNG)
-![](/Air%20Data%20Screenshots/pollutant%20info.PNG)
-![](/Air%20Data%20Screenshots/vision.PNG)
-![](/Air%20Data%20Screenshots/state.PNG)
-![](/Air%20Data%20Screenshots/missouri.PNG)
-![](/Air%20Data%20Screenshots/results.PNG)
+
+### Pollutant Information
+
+![](/Air%20Data%20Screenshots/pollutantInfo.PNG)
+
+### About Us
+
+![](/Air%20Data%20Screenshots/aboutUs.PNG)
+
+### State Map
+
+![](/Air%20Data%20Screenshots/stateMapBase.PNG)
+![](/Air%20Data%20Screenshots/stateMapForme.PNG)
+![](/Air%20Data%20Screenshots/stateMapDisplayedInfo.PNG)
+
+### Heat Map
+
+![](/Air%20Data%20Screenshots/heatMapBase.PNG)
+![](/Air%20Data%20Screenshots/heatMapBlue.PNG)
+![](/Air%20Data%20Screenshots/heatMapRed.PNG)
+![](/Air%20Data%20Screenshots/heatMapGreen.PNG)
+![](/Air%20Data%20Screenshots/heatMapGreenDisplay.png)
